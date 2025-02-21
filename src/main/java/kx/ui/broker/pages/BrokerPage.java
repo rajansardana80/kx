@@ -21,5 +21,6 @@ public class BrokerPage {
         String elementToLocate=dataTable.asMaps().get(0).get("Element");
         String elementValue=dataTable.asMaps().get(0).get("Value");
         CoreData.element(elementToLocate).sendKeys(elementValue);
+        CoreData.takescreenhot();
     }
 }
