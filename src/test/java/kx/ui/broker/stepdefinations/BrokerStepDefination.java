@@ -3,9 +3,9 @@ package kx.ui.broker.stepdefinations;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import kx.ui.broker.pages.BrokerPage;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import pages.BrokerPage;
 
 
 public class BrokerStepDefination {
