@@ -24,6 +24,10 @@ DriverFactory.setDriver();
     @After
     public void afterScenario()
     {
+        if (getScenario().isFailed())
+        {
+            takescreenhot();
+        }
                 DriverFactory.getDriver().close();
 
 
