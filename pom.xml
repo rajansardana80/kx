@@ -110,7 +110,6 @@
                 <jsonFiles>
                     ${project.build.directory}/cucumber-reports/cucumber.json,${project.build.directory}/cucumber-reports/cucumber-rerun.json
                 </jsonFiles>
-                    <outputDirectory>${project.build.directory}/cucumber-merged-reports</outputDirectory>
 
 
 
