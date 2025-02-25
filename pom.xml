@@ -130,16 +130,16 @@
 
                 <configuration>
 
-                <projectName>Cucumber Project</projectName>
 
-                <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
+
+
 
                 <jsonFiles>
-
-                <jsonFile>${project.build.directory}/cucumber-reports/cucumber.json,${project.build.directory}/cucumber-reports/cucumber-rerun.json
-                </jsonFile>
-
+                    ${project.build.directory}/cucumber-reports/cucumber.json,${project.build.directory}/cucumber-reports/cucumber-rerun.json
                 </jsonFiles>
+                    <outputDirectory>${project.build.directory}/cucumber-merged-reports</outputDirectory>
+
+
 
                 </configuration>
 
