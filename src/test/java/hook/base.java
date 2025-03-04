@@ -7,12 +7,23 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.io.File;
+
 public class base {
     private static final ThreadLocal<Scenario> scenarioThreadLocal = new ThreadLocal<>();
+    private static String currentFeature;
+
+
 
     @Before
     public void beforeScenario(Scenario scenario)
-    {scenarioThreadLocal.set(scenario);
+    {
+        String featurePath = scenario.getUri().toString();
+        currentFeature = featurePath.substring(featurePath.lastIndexOf("/") + 1);
+        System.out.println("Running Feature: " + currentFeature);
+
+
+        scenarioThreadLocal.set(scenario);
 DriverFactory.setDriver();
 
     }
@@ -21,10 +32,14 @@ DriverFactory.setDriver();
         return scenarioThreadLocal.get();
     }
 
+    public static String getScenarioName() {
+        return getScenario().getName();
+    }
+
     @After
-    public void afterScenario()
+    public void afterScenario(Scenario scenario)
     {
-        if (getScenario().isFailed())
+        if (scenario.isFailed())
         {
             takescreenhot();
         }
@@ -33,6 +48,10 @@ DriverFactory.setDriver();
 
 
 
+    }
+
+    public static String getCurrentFeature() {
+        return currentFeature;
     }
 
     public static void takescreenhot()  {

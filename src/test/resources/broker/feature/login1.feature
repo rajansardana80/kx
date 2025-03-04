@@ -7,4 +7,3 @@ Feature: Broker login test cases
       | Element | Value                         |
       | email   | rajan.sardana.10@klearnow.com |
       | pwd     | Qa@12345#                     |
-

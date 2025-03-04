@@ -1,4 +1,4 @@
-package pages;
+package broker.page;
 
 import base.DriverFactory;
 

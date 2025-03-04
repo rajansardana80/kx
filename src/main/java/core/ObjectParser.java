@@ -18,7 +18,7 @@ public class ObjectParser {
         InputStream inputStream = null;
 
         try {
-            inputStream = new FileInputStream("src/test/resources/PageObjects.properties");
+            inputStream = new FileInputStream("src/main/resources/PageObjects.properties");
 
         } catch (FileNotFoundException e) {
             logger.error("File not found");
