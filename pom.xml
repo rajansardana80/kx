@@ -96,7 +96,7 @@
 
                 <id>generate-report</id>
 
-                <phase>test</phase>
+                <phase>verify</phase>
 
                 <goals>
 
@@ -114,6 +114,7 @@
                         <jsonFile>${project.build.directory}/cucumber-reports/cucumber.json</jsonFile>
                         <jsonFile>${project.build.directory}/cucumber-reports/cucumber-rerun.json</jsonFile>
                     </jsonFiles>
+                    <reportOutputDirectory>${project.build.directory}/cucumber-html-reports</reportOutputDirectory>
 
 
 
