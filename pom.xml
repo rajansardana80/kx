@@ -70,7 +70,7 @@
                 <configuration>
                     <parallel>methods</parallel>
                     <useUnlimitedThreads>true</useUnlimitedThreads>
-                    <rerunFailingTestsCount>1</rerunFailingTestsCount>
+<!--                    <rerunFailingTestsCount>1</rerunFailingTestsCount>-->
 
                 <includes>
 
@@ -110,9 +110,11 @@
 
 
 
-                <jsonFiles>
-                    ${project.build.directory}/cucumber-reports/cucumber.json,${project.build.directory}/cucumber-reports/cucumber-rerun.json
-                </jsonFiles>
+                    <jsonFiles>
+                        <jsonFile>${project.build.directory}/cucumber-reports/cucumber.json</jsonFile>
+<!--                        <jsonFile>${project.build.directory}/cucumber-reports/cucumber-rerun.json</jsonFile>-->
+                    </jsonFiles>
+
 
 
 
