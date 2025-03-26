@@ -1,0 +1,9 @@
+{
+  "eventMessage": {
+    "email": "?",
+    "engineURL": "https://engine.stage.klearnow.com",
+    "hashedPassword": "?"
+  },
+  "eventType": "ENGINE_USER_LOGIN",
+  "eventTime": 1741667208168
+}

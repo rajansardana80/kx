@@ -24,7 +24,9 @@ public class base {
 
 
         scenarioThreadLocal.set(scenario);
-DriverFactory.setDriver();
+        if(scenarioThreadLocal.get().getSourceTagNames().contains("@Web")) {
+            DriverFactory.setDriver();
+        }
 
     }
 
@@ -39,12 +41,14 @@ DriverFactory.setDriver();
     @After
     public void afterScenario(Scenario scenario)
     {
-        if (scenario.isFailed())
+        if (scenarioThreadLocal.get().getSourceTagNames().contains("@Web")&& (scenario.isFailed()))
         {
             takescreenhot();
         }
-                DriverFactory.getDriver().close();
+        if(scenarioThreadLocal.get().getSourceTagNames().contains("@Web")) {
 
+            DriverFactory.getDriver().close();
+        }
 
 
 

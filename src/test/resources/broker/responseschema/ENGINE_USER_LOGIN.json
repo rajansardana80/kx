@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "eventType": {
+      "type": "string"
+    },
+    "eventMessage": {
+      "type": "object",
+      "properties": {
+        "header": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "code"
+          ]
+        },
+        "email": {
+          "type": "string"
+        },
+        "loginDetails": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "token"
+          ]
+        }
+      },
+      "required": [
+        "header",
+        "email",
+        "loginDetails"
+      ]
+    },
+    "eventTime": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "eventType",
+    "eventMessage",
+    "eventTime"
+  ]
+}

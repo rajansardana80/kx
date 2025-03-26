@@ -1,11 +1,11 @@
-package broker.stepdefination;
+package broker.ui.stepdefination;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import broker.page.BrokerPage;
+import broker.ui.page.BrokerPage;
 
 
 public class BrokerStepDefination {
@@ -27,11 +27,6 @@ BrokerPage brokerObj= new BrokerPage();
         logger.info(Thread.currentThread().threadId()+" :: "+hook.base.getCurrentFeature()+" :: "+ hook.base.getScenarioName() + " :: User credentials entered on webpage");
 
     }
-
-
-
-
-
 
 
 

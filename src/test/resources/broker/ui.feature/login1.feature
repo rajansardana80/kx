@@ -1,4 +1,4 @@
-Feature: Broker login test cases
+Feature: Broker login1 test cases
 
   @Web @Automated
   Scenario: Verify user is able to login into broker application
@@ -6,4 +6,4 @@ Feature: Broker login test cases
     When User enters the below credentials
       | Element | Value                         |
       | email   | rajan.sardana.10@klearnow.com |
-      | pwd     | Qa@12345#                     |
+      | pwd     | Qa@12345                     |

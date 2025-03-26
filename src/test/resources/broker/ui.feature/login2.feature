@@ -1,4 +1,4 @@
-Feature: Broker login test cases
+Feature: Broker login2 test cases
 
   @Web @Automated
   Scenario: Verify user is able to login into broker application
