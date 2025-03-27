@@ -146,7 +146,6 @@
                         <jsonFile>${project.build.directory}/cucumber-reports/cucumber.json</jsonFile>
                         <jsonFile>${project.build.directory}/cucumber-reports/cucumber-rerun.json</jsonFile>
                     </jsonFiles>
-                    <reportOutputDirectory>${project.build.directory}/cucumber-html-reports</reportOutputDirectory>
 
 
 

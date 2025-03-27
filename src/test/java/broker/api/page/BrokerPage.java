@@ -5,11 +5,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.spi.json.JacksonJsonNodeJsonProvider;
 import com.jayway.jsonpath.spi.mapper.JacksonMappingProvider;
+import io.restassured.response.Response;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Map;
+
+import io.restassured.path.json.*;
 
 import io.cucumber.datatable.DataTable;
 
@@ -64,4 +69,26 @@ public class BrokerPage {
 
     }
 
+
+    public static String verifyResponse(DataTable dataTable, String responseValidationFile, Response response) {
+        InputStream inputStream = null;
+        String actualValueFromResponse = null;
+        String valueFromYaml = null;
+        String elementFromDataTable = null;
+        try {
+            inputStream = new FileInputStream(new File(responseValidationFile));
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+
+        Yaml yaml = new Yaml();
+        Map<String, Object> dataFromYaml = yaml.load(inputStream);
+        for (int i = 0; i < dataTable.asMaps().size(); i++) {
+            elementFromDataTable = dataTable.asMaps().get(i).get("Element");
+        }
+        valueFromYaml = (String) dataFromYaml.get(elementFromDataTable);
+        JsonPath jsonPath = response.jsonPath();
+        actualValueFromResponse = jsonPath.get(valueFromYaml);
+        return actualValueFromResponse;
+    }
 }
